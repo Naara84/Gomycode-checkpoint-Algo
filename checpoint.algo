@@ -1,0 +1,42 @@
+ALGORITHM Sentence_analys
+VAR
+    Sentece : STRING;
+    Longueur_phrase, Nombre_mot, Nombre_voy, i, j, k : INTEGER;
+    Verification : BOOLEAN ;
+BEGIN
+    write ("Veuillez saisir votre phrase") ;
+    read (Sentece) ;
+
+
+    //Longueur de la phrase//
+    Longueur_phrase := Sentece.size ;
+
+    FOR k FROM 0 TO Longueur_phrase STEP step  DO
+        IF (Sentece[Longueur_phrase-1] := '.') THEN
+        
+           //Le nombre de mot//
+           FOR i FROM 0 TO Longueur_phrase STEP step  DO
+              Nombre_mot := 1 ;
+                 WHILE (Sentece[i] := ' ') DO
+                    Nombre_mot := Nombre_mot + 1 ;
+                 END_WHILE
+           END_FOR
+
+
+           //le nombre de voyelle//
+           FOR j FROM 0 TO Longueur_phrase STEP step  DO
+              Nombre_voy := 0 ;
+                 WHILE (Sentence[j] := a || Sentence[j] := e || Sentence[j] := i || Sentence[j] := o || Sentence[j] := u || Sentence[j] := y ||) DO
+                    Nombre_voy := Nombre_voy + 1 ; 
+                 END_WHILE
+           END_FOR
+
+           write ("La longueur de la phrase est : ",Longueur_phrase) ;
+           write ("le nombre de mot est : ",Nombre_mot) ;
+           write ("le nombre de voyelle est : "Nombre_voy)
+
+
+        ELSE
+           write("veuillez entrer une phrase correcte (.)" )
+        END_IF
+    END_FOR
